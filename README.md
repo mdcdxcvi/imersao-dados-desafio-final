@@ -25,7 +25,7 @@
 <div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Realizando diversos testes, surgiram evidências fortes que certos indicadores de expressões gênicas e de tipos de células aparentemente apresentavam  alta correlação uns com os outros (proporcional ou inversamente proporcional), como até mesmo os professores mostraram nas aulas.</div>
 &nbsp;
 
-<div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Partindo desta hipótese, elaborei com o apoio da <b><a href="https://sklearn.org/">biblioteca scikit-learn</a></b> um modelo baseado em Redes Neurais que prevesse resposta de certas expressões a partir de outras. Contudo, mesmo usando ferramentas para melhorar a performance do modelo com a busca de hiperparâmetros mais adequados ao problema, a acurácia não foi satisfatória, ficando na casa dos 60% no conjunto de teste, com resultados muito sensíveis a <i>overfitting</i>.</div>
+<div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Partindo desta hipótese, elaborei com o apoio da <b><a href="https://sklearn.org/">biblioteca scikit-learn</a></b> um modelo baseado em Redes Neurais que previsse resposta de certas expressões a partir de outras. Contudo, mesmo usando ferramentas para melhorar a performance do modelo com a busca de hiperparâmetros mais adequados ao problema, a acurácia não foi satisfatória, ficando na casa dos 60% no conjunto de teste, com resultados muito sensíveis a <i>overfitting</i>.</div>
 &nbsp;
 
 <div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Em seguida, explorei os dados relacionados aos mecanismos de ação dos compostos em proteínas alvo, do conjunto de dados de resultados. Por se tratarem de valores inteiros, pude modelar um classificador com a ferramenta de Árvore de Decisão.</div>
@@ -33,7 +33,7 @@
 
 ### Estrutura
 
-![DataFrame](./Images/arv.png "DataFrame")
+![Árvore](./Images/arv.png "Árvore")
 
 <div style="text-align: justify"> &nbsp; &nbsp; &nbsp; O modelo é treinado para cada uma das proteínas alvo, usando como classes para o classificados os diferentes mecanismos de ação envolvidos. O algoritmo treina três modelos simultaneamente: o primeiro usa como entrada apenas as expressões gênicas; já segundo modelo é treinado com as expressões dos tipos de células; e, por fim, o último modelo é treinado com os dois tipos de expressões do conjunto de dados.</div>
 &nbsp;
@@ -41,24 +41,24 @@
 <div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Para esta modelagem tratei os dados do conjunto de resultados dos experimentos, de forma a alocar os mecanismos de ações em uma única coluna para cada <code>id</code> registrado, conforme abaixo. </div>
 &nbsp;
 
-![DataFrame](./Images/reações.png "DataFrame")
+![Reações](./Images/reações.png "Reações")
 
-<div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Os modelos elaborados dessa forma obtiveram uma altíssima acuracia, tanto na fase de treinamento quanto na de teste, com resultados de acurácia raramente abaixo de 95%.</div>
+<div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Os modelos elaborados dessa forma obtiveram uma altíssima acurácia, tanto na fase de treinamento quanto na de teste, com resultados de acurácia raramente abaixo de 95%.</div>
 &nbsp;
 
-![DataFrame](./Images/arv_color.png "DataFrame")
+![Árvore](./Images/arv_color.png "Árvore")
 
-<div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Para concluir o projeto, exibo um DataFrame que mostra os compostos envolvidos nos mecanimos de ação registrados. Assim, espero, ajudando a enteder o caminho entre o mecanismo de ação dos compostos, as alterações nas expressões gênicas e em diferentes tipos de células, e a relação destes mecanismos de ação com outros compostos do conjunto de dados.</div>
+<div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Para concluir o projeto, exibo um DataFrame que mostra os compostos envolvidos nos mecanismos de ação registrados. Assim, espero, ajudando a enteder o caminho entre o mecanismo de ação dos compostos, as alterações nas expressões gênicas e em diferentes tipos de células, e a relação destes mecanismos de ação com outros compostos do conjunto de dados.</div>
 &nbsp;
 
-![DataFrame](./Images/table.png "DataFrame")
+![Tabela](./Images/table.png "Tabela")
 
 ### Conclusão
 
 <div style="text-align: justify"> &nbsp; &nbsp; &nbsp; Com os resultados apresentados, concluo que:</div>
 
 1. A modelagem dos dados com Árvore de Decisão é promissora para a classificação dos mecanismos de ação dos compostos em proteínas, apresentando uma acurácia próxima à 100%.
-2. Tanto os indicadores das expressões gênicas, quanto as expressões dos tipos de células são excelentes parâmentros para a classificação e previsão dos mecanismos de ação em proteínas.
+2. Tanto os indicadores das expressões gênicas, quanto as expressões dos tipos de células são excelentes parâmetros para a classificação e previsão dos mecanismos de ação em proteínas.
 3. Para trabalhos futuros, sugiro o uso de maior poder computacional para explorar hiperparâmetros do modelo de Árvore de Decisão, para assim minimizar os indicadores de expressão necessários para a classificação correta do conjunto de dados.
 
 
